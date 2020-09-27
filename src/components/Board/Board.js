@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import './style.css';
+
 class Board extends Component {
     render() {
         return (
-            <div>
+            <div className="board">
                 Hello!
+                {/*<Food />*/}
+                {/*<Pacman />*/}
+                {/*<Ghost />*/}
+                {/*<Ghost />*/}
             </div>
         );
     }
