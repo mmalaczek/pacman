@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { ReactComponent as PacmanSvg } from './pacman.svg';
+import {ReactComponent as PacmanSvg} from './pacman.svg';
 import './style.css';
 
 class Pacman extends Component {
@@ -13,10 +13,26 @@ class Pacman extends Component {
         }
     };
 
+    constructor(props) {
+        super(props);
+        this.pacmanRef = React.createRef();
+    }
+
+    componentDidMount() {
+        this.pacmanRef.current.focus();
+    }
+
+    handleKeyDown = (event) => {
+        console.log(event.keyCode, event.key);
+    };
+
     render() {
         return (
-            <div className="pacman" style={this.state.position}>
-                <PacmanSvg />
+            <div className="pacman" style={this.state.position}
+                 ref={this.pacmanRef}
+                 tabIndex="0"
+                 onKeyDown={this.handleKeyDown}>
+                <PacmanSvg/>
             </div>
         );
     }
