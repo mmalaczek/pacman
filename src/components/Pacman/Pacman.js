@@ -76,7 +76,7 @@ class Pacman extends Component {
             <div className={`pacman pacman-${direction}`}
                  ref={this.pacmanRef}
                  tabIndex="0"
-                 style={this.state.position}
+                 style={position}
                  onKeyDown={this.handleKeyDown}>
                 <PacmanSvg/>
             </div>

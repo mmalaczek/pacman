@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import {ReactComponent as GhostSvg} from './ghost.svg';
+import './style.css'
 
 class Ghost extends Component {
 
@@ -15,7 +16,7 @@ class Ghost extends Component {
     render() {
         const { color } = this.props;
         return (
-            <div className={`ghost-${color}`}
+            <div className={`ghost ghost-${color}`}
                  style={this.state.position}>
                 <GhostSvg />
             </div>
