@@ -27,26 +27,44 @@ class Pacman extends Component {
 
         const currentTop = this.state.position.top;
         const currentLeft = this.state.position.left;
+        const { step, border, size, topScoreBoardHeight } = this.props;
 
         // 39 ArrowRight
         // 40 ArrowDown
         // 37 ArrowLeft
         // 38 ArrowUp
 
-        if (event.key == 'ArrowUp') {
+        if (event.key === 'ArrowUp') {
             this.setState({
+                position: {
+                    top: Math.max(currentTop - step, 0),
+                    left: currentLeft
+                },
                 direction: 'up'
             });
-        } else if (event.key == 'ArrowRight') {
+        } else if (event.key === 'ArrowRight') {
             this.setState({
+                position: {
+                    top: currentTop,
+                    left: Math.min(currentLeft + step, window.innerWidth - border - size)
+                },
                 direction: 'right'
             });
-        } else if (event.key == 'ArrowDown') {
+        } else if (event.key === 'ArrowDown') {
             this.setState({
+                position: {
+                    // top: currentTop + step,
+                    top: Math.min(currentTop + step, window.innerHeight - border - size - topScoreBoardHeight),
+                    left: currentLeft
+                },
                 direction: 'down'
             });
-        } else if (event.key == 'ArrowLeft') {
+        } else if (event.key === 'ArrowLeft') {
             this.setState({
+                position: {
+                    top: currentTop,
+                    left: Math.max(currentLeft - step, 0)
+                },
                 direction: 'left'
             });
         }
