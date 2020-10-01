@@ -29,10 +29,10 @@ class Pacman extends Component {
         const currentLeft = this.state.position.left;
         const { step, border, size, topScoreBoardHeight } = this.props;
 
-        // 39 ArrowRight
-        // 40 ArrowDown
         // 37 ArrowLeft
         // 38 ArrowUp
+        // 39 ArrowRight
+        // 40 ArrowDown
 
         if (event.key === 'ArrowUp') {
             this.setState({
