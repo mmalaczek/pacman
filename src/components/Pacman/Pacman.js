@@ -8,8 +8,8 @@ class Pacman extends Component {
     state = {
         direction: 'right',
         position: {
-            top: 50,
-            left: 50
+            top: 0,
+            left: 0
         }
     };
 
@@ -23,8 +23,6 @@ class Pacman extends Component {
     }
 
     handleKeyDown = (event) => {
-        console.log(event.keyCode, event.key);
-
         const currentTop = this.state.position.top;
         const currentLeft = this.state.position.left;
         const { step, border, size, topScoreBoardHeight } = this.props;
